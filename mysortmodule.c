@@ -1,11 +1,13 @@
 #include <Python.h>
 
-static PyObject* bubblesort (PyObject* self, PyObject* list) {
+static PyObject* bubblesort (PyObject* self, PyObject* seq) {
   Py_ssize_t i, j, n;
-  PyObject *a, *b;
+  PyObject *a, *b, *list;
   int cmp;
 
-  Py_INCREF(list);
+  Py_INCREF(seq);
+  list = PySequence_List(seq);
+  Py_DECREF(seq);
 
   n = PyObject_Size(list);
 
