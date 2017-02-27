@@ -31,6 +31,9 @@ static PyObject* bubblesort (PyObject* self, PyObject* seq) {
     if (cmp == 1) {
       PyList_SetItem(list, j, b);
       PyList_SetItem(list, j - 1, a);
+    } else {
+      Py_DECREF(a);
+      Py_DECREF(b);
     }
   }
 
