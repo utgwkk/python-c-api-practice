@@ -16,6 +16,15 @@ class MySortTest(unittest.TestCase):
         )
 
 
+    def test_bubblesort_from_tuple(self):
+        tup = (1, 1, 4, 5, 1, 4)
+
+        self.assertEqual(
+            [1, 1, 1, 4, 4, 5],
+            mysort.bubblesort(tup)
+        )
+
+
 def suite():
     suite = unittest.TestSuite()
     suite.addTests(unittest.makeSuite(MySortTest))
