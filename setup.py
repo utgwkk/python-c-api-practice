@@ -9,5 +9,6 @@ setup(
     name='mysort',
     version='1.0',
     description='C API practice',
-    ext_modules=[module]
+    ext_modules=[module],
+    test_suite='test.suite'
 )
