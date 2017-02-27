@@ -1,5 +1,6 @@
 import unittest
 import mysort
+import random
 
 
 class MySortTest(unittest.TestCase):
@@ -22,6 +23,16 @@ class MySortTest(unittest.TestCase):
         self.assertEqual(
             [1, 1, 1, 4, 4, 5],
             mysort.bubblesort(tup)
+        )
+
+
+    def test_bubblesort_very_long_list(self):
+        l = list(range(10000))
+        random.shuffle(l)
+
+        self.assertEqual(
+            list(range(10000)),
+            mysort.bubblesort(l)
         )
 
 
