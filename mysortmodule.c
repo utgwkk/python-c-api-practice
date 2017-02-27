@@ -14,7 +14,7 @@ static PyObject* bubblesort (PyObject* self, PyObject* seq) {
   if (n < 0)
     return NULL;
 
-  for (i = 1; i < n; ++i) for (j = 2; j < n - i + 1; ++j) {
+  for (i = 1; i < n; ++i) for (j = 1; j < n - i + 1; ++j) {
     a = PyList_GetItem(list, j);
     Py_INCREF(a);
     b = PyList_GetItem(list, j - 1);
