@@ -1,9 +1,13 @@
 #include <Python.h>
 
-static PyObject* bubblesort (PyObject* self, PyObject* seq) {
+static PyObject* bubblesort (PyObject* self, PyObject* args) {
   Py_ssize_t i, j, n;
   PyObject *a, *b, *list;
+  PyObject *seq;
   int cmp;
+
+  if (!PyArg_ParseTuple(args, "O", &seq))
+    return NULL;
 
   Py_INCREF(seq);
   list = PySequence_List(seq);
@@ -41,7 +45,7 @@ static PyObject* bubblesort (PyObject* self, PyObject* seq) {
 }
 
 static PyMethodDef MySortMethods[] = {
-  {"bubblesort", (PyCFunction)bubblesort, METH_O, "Apply bubble sort to given list."},
+  {"bubblesort", (PyCFunction)bubblesort, METH_VARARGS, "Apply bubble sort to given list."},
   {NULL, NULL, 0, NULL}
 };
 
