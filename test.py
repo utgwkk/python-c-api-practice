@@ -9,11 +9,11 @@ class MySortTest(unittest.TestCase):
 
         self.assertEqual(
             [1, 2, 3, 4, 5, 6],
-            mysort.bubblesort(l)
+            mysort.bubblesort(alist)
         )
         self.assertEqual(
             [1, 6, 4, 2, 5, 3],
-            l
+            alist
         )
 
     def test_bubblesort_from_tuple(self):
@@ -26,11 +26,11 @@ class MySortTest(unittest.TestCase):
 
     def test_bubblesort_very_long_list(self):
         alist = list(range(10000))
-        random.shuffle(l)
+        random.shuffle(alist)
 
         self.assertEqual(
             list(range(10000)),
-            mysort.bubblesort(l)
+            mysort.bubblesort(alist)
         )
 
 
